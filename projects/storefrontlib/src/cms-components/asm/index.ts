@@ -1,2 +1,2 @@
 export * from './asm.module';
-export * from './asm/asm.component';
+export * from './asm-main/asm.component';
