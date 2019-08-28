@@ -62,6 +62,9 @@ if (!environment.production) {
         chunks: translationChunksConfig,
         fallbackLang: 'en',
       },
+      features: {
+        asm: true,
+      },
     }),
 
     TestOutletModule, // custom usages of cxOutletRef only for e2e testing
