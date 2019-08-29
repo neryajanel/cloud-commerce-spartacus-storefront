@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AsmRootComponent } from './asm-root.component';
+import { AsmRootComponent } from './asm.component';
 
 describe('AsmRootComponent', () => {
   let component: AsmRootComponent;

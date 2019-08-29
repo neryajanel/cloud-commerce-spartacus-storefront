@@ -14,7 +14,7 @@ import {
   UserToken,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
-import { AsmComponent } from './asm.component';
+import { AsmComponent } from './asm-main-ui.component';
 
 const mockToken = {
   access_token: 'asdfasf',

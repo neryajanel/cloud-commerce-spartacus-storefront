@@ -16,7 +16,7 @@ import { switchMap, take } from 'rxjs/operators';
 
 @Component({
   selector: 'cx-asm-main',
-  templateUrl: './asm.component.html',
+  templateUrl: './asm-main-ui.component.html',
 })
 export class AsmComponent implements OnInit, OnDestroy {
   csAgentToken$: Observable<UserToken>;
