@@ -9,17 +9,21 @@ import {
 } from '@angular/platform-browser';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { translationChunksConfig, translations } from '@spartacus/assets';
-import { TestConfigModule } from '@spartacus/core';
+import {
+  CUSTOMER_SEARCH_PAGE_NORMALIZER,
+  TestConfigModule,
+} from '@spartacus/core';
 import {
   B2cStorefrontModule,
   StorefrontComponent,
 } from '@spartacus/storefront';
+import { CustomerSeacrhCustomNormalizer } from '../custom-normalizer/customer-search-custom-normalizer';
 import { environment } from '../environments/environment';
 import { TestOutletModule } from '../test-outlets/test-outlet.module';
+
 registerLocaleData(localeDe);
 registerLocaleData(localeJa);
 registerLocaleData(localeZh);
-
 const devImports = [];
 
 if (!environment.production) {
@@ -73,6 +77,13 @@ if (!environment.production) {
     TestConfigModule.forRoot({ cookie: 'cxConfigE2E' }), // Injects config dynamically from e2e tests. Should be imported after other config modules.
 
     ...devImports,
+  ],
+  providers: [
+    {
+      provide: CUSTOMER_SEARCH_PAGE_NORMALIZER,
+      useClass: CustomerSeacrhCustomNormalizer,
+      multi: true,
+    },
   ],
 
   bootstrap: [StorefrontComponent],
