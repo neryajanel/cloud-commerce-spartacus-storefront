@@ -39,8 +39,8 @@
 
     <div class="cx-toggle-button">
       <input
+        id="e"
         type="checkbox"
-        class="form-check-input"
         [checked]="consentGiven"
         (change)="onConsentChange()"
       />
@@ -48,7 +48,7 @@
       <label for="e">
         <!-- TODO: "for" attribute has to reference the input element -->
         <div class="cx-toggle-switch"></div>
-        <div class="cx-toggle-text">ON</div>
+        <div class="cx-toggle-text">OFF</div>
         <!-- TODO: "ON" has to be dynamic -->
       </label>
     </div>

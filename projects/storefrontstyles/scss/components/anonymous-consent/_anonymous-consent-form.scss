@@ -1,3 +1,5 @@
+// @import '../../theme';
+
 %cx-anonymous-consent-form {
   /* Checkboxes should work without toggle button styling
 Reset visible focus color to single color*/
@@ -35,10 +37,10 @@ Reset visible focus color to single color*/
 
   //Accordion
   .cx-accordion {
-    max-width: 600px;
-    margin: 50px auto;
+    margin: 5px auto;
     line-height: 1.6;
     list-style-type: none;
+    padding: 0;
   }
   .cx-accordion-item {
     border: 1px solid #ccc;
@@ -50,9 +52,7 @@ Reset visible focus color to single color*/
     padding: 15px 15px 15px 40px;
     display: block;
     position: relative;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
   }
   .cx-accordion-tab {
     background-color: $cx-g-color-inverse;
@@ -65,7 +65,7 @@ Reset visible focus color to single color*/
   }
   .cx-accordion-tabpanel {
     transition: height 0.3s ease-out;
-    height: 0;
+    height: 100px;
     overflow: hidden;
     background-color: $cx-g-color-inverse;
   }
