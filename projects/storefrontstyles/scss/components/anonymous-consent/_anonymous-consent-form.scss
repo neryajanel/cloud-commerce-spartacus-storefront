@@ -71,12 +71,16 @@ Reset visible focus color to single color*/
   }
 
   //-----------------------------------------------------
-
+  // Move all this to cxbase except for positioning
   //Toggle Button
   .cx-toggle-button {
     position: absolute;
     top: 10px;
-    right: 90px;
+    left: 100%;
+    margin-left: -20%;
+    @include media-breakpoint-up(md) {
+      margin-left: -15%;
+    }
   }
   .cx-toggle-button *,
   .cx-toggle-button *:before,
@@ -184,7 +188,7 @@ Reset visible focus color to single color*/
   .cx-toggle-button label .cx-toggle-text {
     font-size: 14px;
     flex: 1;
-    padding-left: 1rem;
+    padding-left: 0.35rem;
     color: $cx-g-color-secondary;
   }
 

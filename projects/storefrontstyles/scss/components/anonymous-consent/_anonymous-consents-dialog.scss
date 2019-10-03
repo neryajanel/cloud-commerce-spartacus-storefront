@@ -1,6 +1,12 @@
 @import '../../theme';
 
 %cx-anonymous-consents-dialog {
+  .cx-dialog-header {
+    padding-top: 1.5rem;
+  }
+  .cx-dialog-body {
+    padding-top: 0;
+  }
   .cx-dialog-buttons {
     text-align: right;
     padding: 0 2rem;
