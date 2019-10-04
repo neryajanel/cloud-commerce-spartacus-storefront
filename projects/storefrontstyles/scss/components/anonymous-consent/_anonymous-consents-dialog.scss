@@ -6,6 +6,10 @@
   }
   .cx-dialog-body {
     padding-top: 0;
+    //this below is custom not global
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+    }
   }
   .cx-dialog-buttons {
     text-align: right;
@@ -15,11 +19,16 @@
     @include type(8);
     font-weight: 600;
     text-transform: uppercase;
+    text-decoration: underline;
     cursor: pointer;
   }
 
   .cx-dialog-row {
     max-width: 100%;
+    //this below is custom not global
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+    }
   }
 
   .cx-dialog-title {

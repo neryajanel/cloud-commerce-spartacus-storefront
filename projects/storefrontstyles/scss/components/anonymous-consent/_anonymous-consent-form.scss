@@ -5,12 +5,6 @@
 Reset visible focus color to single color*/
 
   //Global Stuff
-  $cx-g-visual-focus: #51a7e8;
-  $cx-g-color-background: #f4f4f4;
-  $cx-g-color-inverse: #ffffff;
-  $cx-g-color-primary: #fe5757;
-  $cx-g-color-secondary: #747881;
-  $cx-g-color-light: #d3d6db;
 
   cx-icon {
     position: absolute;
@@ -22,15 +16,11 @@ Reset visible focus color to single color*/
   }
   .cx-keyb-focusable:focus > .cx-keyb-visualfocus,
   .cx-keyb-focusable:focus ~ .cx-keyb-visualfocus {
-    box-shadow: 0 0 2px 2px $cx-g-visual-focus;
+    box-shadow: 0 0 2px 2px var(--cx-color-visual-focus);
   }
   .cx-keyb-focusable:focus,
   .cx-keyb-visualfocus:focus {
     outline: none;
-  }
-
-  body {
-    background-color: $cx-g-color-background;
   }
 
   //-----------------------------------------------------
@@ -41,21 +31,34 @@ Reset visible focus color to single color*/
     line-height: 1.6;
     list-style-type: none;
     padding: 0;
+    //this below is custom not global
+    @include media-breakpoint-down(xs) {
+      margin: 0;
+    }
   }
   .cx-accordion-item {
-    border: 1px solid #ccc;
+    border: 1px solid var(--cx-color-light);
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
+    //this below is custom not global
+    @include media-breakpoint-down(xs) {
+      margin: 0;
+      border-bottom: 0 none;
+    }
   }
   .cx-accordion-title {
     padding: 15px 15px 15px 40px;
     display: block;
     position: relative;
     font-weight: 600;
+    //this below is custom not global
+    @include media-breakpoint-down(xs) {
+      width: 60%;
+    }
   }
   .cx-accordion-tab {
-    background-color: $cx-g-color-inverse;
+    background-color: var(--cx-color-inverse);
   }
   .cx-accordion-tab:hover {
     cursor: pointer;
@@ -65,9 +68,9 @@ Reset visible focus color to single color*/
   }
   .cx-accordion-tabpanel {
     transition: height 0.3s ease-out;
-    height: 100px;
+    height: 0;
     overflow: hidden;
-    background-color: $cx-g-color-inverse;
+    background-color: var(--cx-color-inverse);
   }
 
   //-----------------------------------------------------
@@ -105,8 +108,8 @@ Reset visible focus color to single color*/
 
   //----- Checkbox Control - Checked
   .cx-toggle-button input[type='checkbox']:checked ~ label .cx-toggle-switch {
-    background-color: $cx-g-color-primary;
-    border: 1px solid $cx-g-color-primary;
+    background-color: var(--cx-color-primary);
+    border: 1px solid var(--cx-color-primary);
   }
   .cx-toggle-button
     input[type='checkbox']:checked
@@ -120,8 +123,8 @@ Reset visible focus color to single color*/
     ~ label
     .cx-toggle-switch:after {
     content: '\00a0';
-    border: 2px solid $cx-g-color-inverse;
-    background-color: $cx-g-color-inverse;
+    border: 2px solid var(--cx-color-inverse);
+    background-color: var(--cx-color-inverse);
     transform: translate3d(22px, 0, 0);
   }
 
@@ -136,15 +139,15 @@ Reset visible focus color to single color*/
     input[type='checkbox'][disabled]:checked
     ~ label
     .cx-toggle-switch {
-    background-color: $cx-g-color-light;
-    border: 1px solid $cx-g-color-light;
+    background-color: var(--cx-color-light);
+    border: 1px solid var(--cx-color-light);
   }
 
   .cx-toggle-button
     input[type='checkbox'][disabled]:checked
     ~ label
     .cx-toggle-text {
-    color: $cx-g-color-light;
+    color: var(--cx-color-light);
   }
 
   //Toggle Switch
@@ -159,8 +162,8 @@ Reset visible focus color to single color*/
     height: 32px;
     flex: 0 0 56px;
     border-radius: 60px;
-    border: 1px solid $cx-g-color-secondary;
-    background-color: $cx-g-color-inverse;
+    border: 1px solid var(--cx-color-secondary);
+    background-color: var(--cx-color-inverse);
     transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1);
   }
   .cx-toggle-button label .cx-toggle-switch:before {
@@ -189,19 +192,19 @@ Reset visible focus color to single color*/
     line-height: 20px;
     -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 1, 0.5, 1);
     transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1);
-    border: 2px solid $cx-g-color-secondary;
-    background-color: $cx-g-color-secondary;
+    border: 2px solid var(--cx-color-secondary);
+    background-color: var(--cx-color-secondary);
   }
   //Toggle Text
   .cx-toggle-button label .cx-toggle-text {
     font-size: 14px;
     flex: 1;
     padding-left: 0.35rem;
-    color: $cx-g-color-secondary;
+    color: var(--cx-color-secondary);
   }
 
   //----- Focus A11Y Specific for toggle buttons
   .cx-toggle-button input[type='checkbox']:focus ~ label .cx-toggle-switch {
-    box-shadow: 0 0 2px 3px $cx-g-visual-focus;
+    box-shadow: 0 0 2px 3px var(--cx-color-visual-focus);
   }
 }
